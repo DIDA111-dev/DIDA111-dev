@@ -1,0 +1,15 @@
+1.git log : 查看详细历史记录，按提交时间倒叙排列，包含提交时间，提交作者，提交备注以及提交的hash值；
+2.git log --pretty=oneline : 格式化log形式，每条log只有一行，只包含 完整的hash值 和 提交的备注；
+3.git log --oneline : 格式化log形式，每条log只有一行，只包含 短hash值 和 提交的备注；
+【注】2和3的区别就是 展示的hash值的长短，短hash就是完整hash截取了前7位的表示形式。
+4.git log -n 3 : 只展示最新的 几条 日志，-n 后面的数字就表示 要展示的条数;
+5.git log --graph : 会展示历史提交的分支路线;
+【注】 参数可以结合使用!
+      比如 git log --oneline -n 3 : 即一行一行的展示+只展示最近的3次提交记录;
+      比如 git log --oneline --graph : 即一行一行的展示+展示提交的路线;
+6.git reflog : 展示短hash+HEAD{n}+提交备注，非常方便用来进行历史版本的回退与任意版本的切换；
+7.git reflog -n 2 : 表示只看最近的两次提交
+【注】 git log 和 git reflog 的区别：
+            git log : 只展示 当前版本之前的版本，即HEAD指针指向的版本及之前的历史版本；
+            git reflog : 会展示所有的历史提交版本，非常的全。
+8.git log --stat : 可以查看历史提交的改动的文件
